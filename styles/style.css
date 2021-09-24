@@ -27,9 +27,9 @@ html, body, main, div, h1, p, img {
 	font: inherit;	
 }
 body{
+    
     height: 100vh;    
-    display:flex;
-    /* flex-direction: column; */
+    display:flex;    
     justify-content: center;
     align-items: center;
     font-size: 12px;
@@ -181,7 +181,9 @@ details[open] img{
     .faq__question{    
       font-size: 13px;    
       justify-content: center;
-      max-width:279px;    
+      max-width:279px; 
+      padding-top:8.5px;
+      padding-bottom: 8.5px;   
     }
     .summary__question>span{
       width:269px;
