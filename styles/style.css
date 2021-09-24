@@ -1,0 +1,232 @@
+*,*::before,*::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100%;
+}
+
+:root{
+    /*text*/
+    --primary-darkBlue:hsl(238, 29%, 16%);
+    --primary-softRed: hsl(14, 88%, 65%);
+    --neutral-veryDarkGrayishBlue:hsl(237, 12%, 33%);
+    --neutral-darkGrayishBlue:hsl(240, 6%, 50%);
+    --neutral-lightGrayishBlue:hsl(240, 5%, 91%);
+    /*background gradients*/
+    --gradient-softViolet:hsl(273, 75%, 66%);
+    --gradient-softBlue:hsl(240, 73%, 65%); 
+}
+
+/*reset styles*/
+html, body, main, div, h1, p, img {
+    margin:0;
+    padding:0;
+    border:0;    
+	font: inherit;	
+}
+body{
+    height: 100vh;    
+    display:flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-family: 'Kumbh Sans', sans-serif;
+    background: linear-gradient(180deg, var(--gradient-softViolet) 0%, var(--gradient-softBlue) 100%) no-repeat;
+    background-size: cover;  
+}
+
+.container{  
+  background: url(../assets/desktop/illustration-woman-online-desktop.svg),url(../assets/desktop/bg-pattern-desktop.svg);
+  background-repeat: no-repeat, no-repeat;
+  background-color: #ffffff;
+  background-position: -70px 80px, -550px -300px;    
+  display: flex;    
+  border-radius:23px;
+  padding: 65px 100px 83px;  
+  max-width: 920px;
+  max-height: 509px;   
+}
+
+.illustration {
+  width: 400px;
+  position: relative;
+  top: 150px;
+  left: -200px;
+}
+
+  /* hide images for screens smaller than 1024px */
+.hide-desktop {
+  display: none;
+}  
+
+.faq__container{  
+  max-height: 472px;
+  align-self: center;
+}
+
+.faq__heading{
+  font-weight: 700;
+  font-size: 32px;
+  color: var(--primary-darkBlue);
+  text-align: left; 
+}
+
+.faq__accordion{        
+  width:100%;   
+  margin-top:16px;
+}
+
+.faq__question{
+    border-bottom:1px solid var(--neutral-lightGrayishBlue);
+    font-size: 14px;
+    padding-top:18px;
+    padding-bottom: 18px;
+    font-weight: 400;    
+    color:var(--neutral-veryDarkGrayishBlue);
+    max-width:350px;    
+}
+
+details[open] summary{
+    font-weight: 700;
+}
+
+.faq__answer{
+    padding-top: 9px;
+    color: var(--neutral-darkGrayishBlue);
+    line-height: 1.5;
+}
+
+/*remove default details triangle arrow icon*/
+summary { 
+    list-style:none;
+    display: inline-flex;
+    
+}
+summary::-webkit-details-marker {display: none; }
+
+/*add icon arrow-down*/
+summary::after{
+    content: url('../assets/icon-arrow-down.svg');   
+    width: 10px;
+    height: 7px; 
+}
+.summary__question{
+  cursor: pointer;
+}
+
+.summary__question:hover{
+  color:var(--primary-softRed);
+}
+
+.summary__question>span{
+    width:340px;
+}
+
+/*when details (question) is open, remove arrow from content and display upside down arrow*/
+details[open] summary::after{
+    content:'';    
+}
+
+/*hide arrow-up when details are closed*/
+details img{
+    visibility: hidden;
+}
+
+/*arrow-up visible*/
+details[open] img{  
+    visibility: visible;    
+    margin-top: 9px;
+    margin-right: -10px;
+    float:right;    
+    width: 10px;
+    height: 7px;  
+    transform: rotate(180deg);    
+}
+
+ @media(max-width: 1023px){
+    body {
+      height: 100%;
+      margin: 160px 0 60px;
+    }
+  
+    .container {
+      background: none;
+      background-color: #fff;
+      flex-direction: column;
+      align-items: center;
+      height:535px;
+      width:327px;      
+      padding: 0 24px ;
+    }
+
+    .faq__container{
+      height: 355px;
+      width:279px;
+      justify-self: flex-start;
+      padding:0; 
+    }
+
+    .faq__heading{
+      margin:0;
+      text-align: center;
+    }
+
+    .faq__accordion{        
+      width:100%;
+    }
+
+    .faq__question{    
+      font-size: 13px;    
+      justify-content: center;
+      max-width:279px;    
+    }
+    .summary__question>span{
+      width:269px;
+      padding-top:8.5px;
+      padding-bottom: 8.5px;
+    }
+    .faq__answer{
+      font-size: 12px;
+      padding-top: 4px;
+      line-height:1.5;
+    }
+  
+    .illustration {
+      max-width: 300px;
+      top: 0px;
+      left: 0px;
+    }
+  
+    /*hide box illustration*/
+    .hide-mobile {
+      display: none;
+    }
+  
+    .illustration__img, .illustration__shadow {
+      display: block;
+    }
+  
+    .illustration__shadow{
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  
+    .illustration__img{
+      position: absolute;
+      top: -110px;
+    }
+
+    details[open] img{
+     margin-top: 5px;    
+    }
+    summary::after{
+      padding-top: 8.5px;
+    }
+}
+
+
+
