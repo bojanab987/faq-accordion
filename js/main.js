@@ -1,4 +1,4 @@
-const details = document.querySelectorAll('details');
+const details = document.querySelectorAll('.js-toggle');
 details.forEach((item) => {
     item.addEventListener('toggle', toggleOneAnswer);
 });
