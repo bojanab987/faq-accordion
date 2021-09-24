@@ -228,6 +228,10 @@ details[open] img{
     summary::after{
       padding-top: 8.5px;
     }
+    .summary__question:hover{
+      color:var(--neutral-veryDarkGrayishBlue);
+      user-select: none;
+    }
 }
 
 
